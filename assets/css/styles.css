@@ -1,0 +1,744 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+.contenedor {
+  padding: 60px 0;
+  width: 90%;
+  max-width: 1000px;
+  margin: auto;
+  overflow: hidden;
+}
+
+.titulo {
+  color: #14740f;
+  font-size: 30px;
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.btn {
+  padding: 10px 0;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.btn-info {
+  color: #FFFFFF;
+  background: #17408b;
+}
+
+header {
+  width: 100%;
+  height: 100vh;
+  background: #14740f;
+  background: -webkit-linear-gradient(to right, rgba(20, 117, 15, 0.459), rgba(92, 127, 11, 0.664)), url(../img/portada01.jpg);
+  background: linear-gradient(to right, rgba(20, 117, 15, 0.459), rgba(92, 127, 11, 0.664)), url(../img/portada01.jpg);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  position: relative;
+}
+header nav {
+  text-align: right;
+  padding: 30px 50px 0 0;
+}
+header nav > a {
+  color: #FFFFFF;
+  font-weight: 300;
+  font-size: 18px;
+  text-decoration: none;
+  margin-right: 10px;
+}
+header nav > a:hover {
+  text-decoration: underline;
+}
+header .textos-header {
+  display: flex;
+  height: 430px;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+header .textos-header h1 {
+  font-size: 50px;
+  color: #FFF;
+}
+header .textos-header h2 {
+  font-size: 30px;
+  font-weight: 300;
+  color: #FFF;
+}
+header .wave {
+  height: 150px;
+  width: 100%;
+  overflow: hidden;
+  position: absolute;
+  bottom: 0;
+}
+
+@media screen and (max-width: 900px) {
+  header {
+    background-position: center;
+  }
+}
+@media screen and (max-width: 500px) {
+  header .textos-header h1 {
+    font-size: 40px;
+  }
+  header .textos-header h2 {
+    font-size: 25px;
+  }
+}
+@media screen and (max-width: 414px) {
+  header nav {
+    margin: 0;
+    padding: 0;
+    padding-top: 30px;
+    display: flex;
+    justify-content: center;
+  }
+  header nav a {
+    font-size: 16px;
+  }
+}
+@media screen and (max-width: 360px) {
+  header nav {
+    margin: 0;
+    padding: 0;
+    padding-top: 30px;
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  header nav a {
+    font-size: 14px;
+    text-align: center;
+  }
+}
+.acerca-de .contenedor-acerca-de {
+  display: flex;
+  justify-content: center;
+}
+.acerca-de .contenedor-acerca-de .contenido-textos {
+  width: 48%;
+  display: flex;
+  margin: auto;
+}
+.acerca-de .contenedor-acerca-de .contenido-textos p {
+  font-size: 18px;
+  text-align: justify;
+}
+.acerca-de .contenedor-acerca-de .contenido-textos p b span {
+  font-size: 15px;
+}
+.acerca-de .contenedor-acerca-de .imagen-about-us {
+  width: 48%;
+}
+
+.nuestros-clientes {
+  background: #FFFFFF;
+}
+.nuestros-clientes .galeria-clientes {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+.nuestros-clientes .galeria-clientes .imagen-port {
+  width: 24%;
+  height: 200px;
+  margin-bottom: 15px;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.5);
+}
+.nuestros-clientes .galeria-clientes .imagen-port > img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+.nuestros-clientes .galeria-clientes .imagen-port:hover .hover-galeria {
+  transform: scale(1);
+}
+.nuestros-clientes .galeria-clientes .imagen-port .hover-galeria {
+  text-decoration: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  transform: scale(0);
+  background: #14740fbb;
+  transition: transform 0.5s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.nuestros-clientes .galeria-clientes .imagen-port .hover-galeria img {
+  width: 150px;
+}
+.nuestros-clientes .galeria-clientes .imagen-port .hover-galeria p {
+  color: #FFF;
+  text-align: center;
+}
+
+@media screen and (max-width: 414px) {
+  .acerca-de .contenedor-acerca-de {
+    flex-direction: column;
+  }
+  .acerca-de .contenedor-acerca-de .contenido-textos {
+    width: 95%;
+  }
+  .acerca-de .contenedor-acerca-de .imagen-about-us {
+    width: 100%;
+    margin-bottom: 10%;
+  }
+
+  .nuestros-clientes .galeria-clientes .imagen-port {
+    width: 70%;
+  }
+}
+.show {
+  z-index: 10;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.404);
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  transform: scale(0);
+  transition: transform 0.3s;
+}
+.show:target {
+  transform: scale(1);
+}
+.show .show__container {
+  margin: auto;
+  width: 90%;
+  height: 70%;
+  position: relative;
+  background-color: #FFFFFF;
+  background-image: url(../img/logo-sanatorio-agua-dios.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.3);
+}
+.show .show__container .show__close {
+  background: crimson;
+  color: #fff;
+  text-decoration: none;
+  font-size: 2rem;
+  width: 50px;
+  height: 50px;
+  display: block;
+  text-align: center;
+  line-height: 50px;
+  position: absolute;
+  right: 0;
+  top: -20px;
+  right: -20px;
+  border-radius: 50%;
+}
+.show .show--n1 {
+  background-image: url(../img/logo-sanatorio-agua-dios.svg);
+}
+.show .show--n2 {
+  background-image: url(../img/ComfatolimaLogo.jpg);
+}
+.show .show--n3 {
+  background-image: url(../img/comfenalco.jpg);
+}
+.show .show--n4 {
+  background-image: url(../img/gobernacionTolima.png);
+}
+.show .show--n5 {
+  background-image: url(../img/hospitalSanFranciscoVilladeLeyva.jpeg);
+}
+.show .show--n6 {
+  background-image: url(../img/corTolima.png);
+}
+.show .show--n7 {
+  background-image: url(../img/enertolima.png);
+}
+.show .show--n8 {
+  background-image: url(../img/universidad_del_tolima.png);
+}
+.show .show--n9 {
+  background-image: url(../img/HospitalSanRafael.png);
+}
+.show .show--n10 {
+  background-image: url(../img/viva.png);
+}
+
+.sobre-nosotros {
+  background: #F2F2F2;
+}
+.sobre-nosotros > .contenedor {
+  display: grid;
+  grid-template-areas: "titulo titulo" "mision vision" "valores__corporativos valores__corporativos";
+  grid-gap: 10px;
+}
+.sobre-nosotros > .contenedor > .titulo {
+  grid-area: titulo;
+}
+.sobre-nosotros > .contenedor .mision {
+  grid-area: mision;
+}
+.sobre-nosotros > .contenedor .vision {
+  grid-area: vision;
+}
+.sobre-nosotros > .contenedor .subtitulo {
+  color: #14740f;
+  text-align: center;
+}
+.sobre-nosotros > .contenedor p {
+  width: 95%;
+  margin: auto;
+  margin-top: 5%;
+  text-align: justify;
+  padding: 10px;
+}
+.sobre-nosotros > .contenedor .valores__corporativos {
+  grid-area: valores__corporativos;
+  display: grid;
+  grid-template-areas: "titulo titulo" "imagen texto";
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 10px;
+}
+.sobre-nosotros > .contenedor .valores__corporativos .subtitulo {
+  grid-area: titulo;
+  margin-bottom: 5%;
+}
+.sobre-nosotros > .contenedor .valores__corporativos .img {
+  grid-area: imagen;
+  display: flex;
+  margin: auto;
+}
+.sobre-nosotros > .contenedor .valores__corporativos .img img {
+  width: 100%;
+}
+.sobre-nosotros > .contenedor .valores__corporativos .texto {
+  grid-area: texto;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  text-align: center;
+}
+.sobre-nosotros > .contenedor .valores__corporativos .texto h4 {
+  color: #14740f;
+  text-align: center;
+}
+.sobre-nosotros > .contenedor .valores__corporativos .texto h4::after {
+  content: " Honestidad";
+  animation: key_valores 80s alternate 5s infinite;
+}
+.sobre-nosotros > .contenedor .valores__corporativos .texto p::after {
+  content: " Los corazones honestos, producen acciones honestas.";
+  animation: key_valores_text 80s alternate 5s infinite;
+}
+
+@media screen and (max-width: 414px) {
+  .sobre-nosotros > .contenedor {
+    grid-template-areas: "titulo" "mision" "vision" "valores__corporativos";
+  }
+  .sobre-nosotros > .contenedor .valores__corporativos {
+    grid-template-areas: "titulo titulo" "imagen imagen" "texto texto";
+  }
+  .sobre-nosotros > .contenedor .valores__corporativos .subtitulo {
+    text-align: center;
+  }
+}
+.que__hacemos {
+  background: #FFFFFF;
+}
+.que__hacemos .card__copy {
+  margin-top: 20px;
+}
+.que__hacemos .card__container {
+  width: 99%;
+  margin: 0 auto;
+  margin-top: 60px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  gap: 20px;
+  grid-template-areas: ".          card1            ." "card2      card1        card3" "card2      card4        card3" ".          card4            ." "card5      card6        card7" "card5      card6        card7" ".          card8            ." "card9      card8       card10" "card9        .         card10";
+}
+.que__hacemos .card__container .card__item {
+  padding: 20px;
+  background: #FFFFFF;
+  border-top: 5px solid #14740f;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.que__hacemos .card__container .card__item .card__img {
+  background: #14740f;
+  margin-top: 20px;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.que__hacemos .card__container .card__item .card__title {
+  margin: 20px 0;
+  text-align: center;
+}
+.que__hacemos .card__container .card__item .card__paragraph {
+  text-align: justify;
+  font-weight: 300;
+  margin-bottom: 20px;
+}
+.que__hacemos .card__container .card__item:first-of-type {
+  grid-area: card1;
+}
+.que__hacemos .card__container .card__item:nth-of-type(2) {
+  grid-area: card2;
+}
+.que__hacemos .card__container .card__item:nth-of-type(3) {
+  grid-area: card3;
+}
+.que__hacemos .card__container .card__item:nth-of-type(4) {
+  grid-area: card4;
+}
+.que__hacemos .card__container .card__item:nth-of-type(5) {
+  grid-area: card5;
+}
+.que__hacemos .card__container .card__item:nth-of-type(6) {
+  grid-area: card6;
+}
+.que__hacemos .card__container .card__item:nth-of-type(7) {
+  grid-area: card7;
+}
+.que__hacemos .card__container .card__item:nth-of-type(8) {
+  grid-area: card8;
+}
+.que__hacemos .card__container .card__item:nth-of-type(9) {
+  grid-area: card9;
+}
+.que__hacemos .card__container .card__item:last-of-type {
+  grid-area: card10;
+}
+
+@media screen and (max-width: 900px) {
+  .que__hacemos .card__container {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: "card1 card2" "card3 card4" "card5 card6" "card7 card8" "card9 card10";
+  }
+}
+@media screen and (max-width: 900px) {
+  .que__hacemos .card__container {
+    grid-template-columns: 1fr;
+    grid-template-areas: "card1" "card2" "card3" "card4" "card5" "card6" "card7" "card8" "card9" "card10";
+  }
+}
+@media screen and (max-width: 414px) {
+  .que__hacemos .card__container {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(10, 2fr);
+    grid-template-areas: "card1" "card2" "card3" "card4" "card5" "card6" "card7" "card8" "card9" "card10";
+  }
+}
+.projects {
+  background: #F2F2F2;
+}
+.projects .contenedor-projects {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.projects .contenedor-projects .project__item {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 40%;
+}
+.projects .contenedor-projects .project__item figure img {
+  width: 100%;
+}
+.projects .contenedor-projects .project__item .project_title {
+  text-align: center;
+  margin: 5% 0;
+}
+.projects .contenedor-projects .project__item .project__paragraph {
+  text-align: justify;
+}
+.projects .contenedor-projects .project__item button {
+  width: 60%;
+  margin: auto;
+}
+
+@media screen and (max-width: 600px) {
+  .projects .contenedor-projects {
+    flex-direction: column;
+  }
+  .projects .contenedor-projects .project__item {
+    width: 100%;
+    margin-bottom: 10%;
+  }
+}
+:root {
+  --clip: circle(0 at top right);
+  --show: scale(0);
+  --transitionModal: .5s transform;
+  --transitionBackground: 1s .5s clip-path;
+}
+
+.modal {
+  z-index: 10;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.76);
+  display: flex;
+  clip-path: var(--clip);
+  transition: var(--transitionBackground);
+}
+.modal:target {
+  --clip: circle(150% at top right);
+  --show: scale(1);
+  --transitionModal: .5s 1s transform;
+  --transitionBackground: 1s clip-path;
+}
+.modal .modal__container {
+  margin: auto;
+  background: #fff;
+  width: 90%;
+  max-width: 1200px;
+  min-height: 70%;
+  display: grid;
+  grid-template-columns: 4fr repeat(7, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  position: relative;
+  transform: var(--show);
+  transition: var(--transitionModal);
+}
+.modal .modal__container .modal__close {
+  position: absolute;
+  background: crimson;
+  color: #fff;
+  width: 30px;
+  height: 30px;
+  display: block;
+  cursor: pointer;
+  text-align: center;
+  line-height: 30px;
+  text-decoration: none;
+  top: 0;
+  right: 0;
+  font-family: sans-serif;
+  font-weight: bold;
+}
+.modal .modal__container .modal__img {
+  grid-row: 1/-1;
+  grid-column: 1/4;
+  width: 90%;
+  place-self: center;
+}
+.modal .modal__container .modal__texts {
+  grid-row: 2/-2;
+  grid-column: 4/-2;
+  place-self: center;
+  display: grid;
+  gap: 20px;
+  justify-items: start;
+  text-align: center;
+}
+.modal .modal__container .modal__texts .modal__title {
+  font-size: 2rem;
+  text-align: center;
+}
+.modal .modal__container .modal__texts .modal__paragraph {
+  padding: 10px;
+  font-size: 1rem;
+  text-align: justify;
+}
+
+@media screen and (max-width: 900px) {
+  .modal .modal__container {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: "img" "texto";
+  }
+  .modal .modal__container .modal__img {
+    margin-top: 10%;
+    grid-area: img;
+  }
+  .modal .modal__container .modal__texts {
+    grid-area: texto;
+  }
+  .modal .modal__container .modal__texts .modal__title {
+    text-align: center;
+  }
+}
+footer {
+  background: #cecedd;
+  padding: 160px 0 50px;
+  margin: auto;
+  overflow: hidden;
+  position: relative;
+}
+footer::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100px;
+  background: #F2F2F2;
+  top: 0;
+  left: 0;
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+}
+footer .contenedor-footer {
+  display: flex;
+  flex-wrap: wrap;
+  width: 90%;
+  justify-content: space-evenly;
+  margin: auto;
+  padding-bottom: 50px;
+  border-bottom: 1px solid #ccc;
+}
+footer .contenedor-footer .content-foo {
+  text-align: center;
+  margin-bottom: 2%;
+  color: #14740f;
+}
+footer .contenedor-footer .content-foo h4 {
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+}
+footer .contenedor-footer .content-foo .p-email::after {
+  content: " info@energyt.co";
+}
+footer .footer__social {
+  display: flex;
+  justify-content: center;
+  padding-top: 30px;
+  flex-wrap: wrap;
+}
+footer .footer__social .footer__link {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+footer .footer__social .footer__link:first-of-type {
+  background: #2f4d84;
+}
+footer .footer__social .footer__link:nth-of-type(2) {
+  background: #C4302B;
+}
+footer .footer__social .footer__link:last-of-type {
+  background: linear-gradient(90deg, #833ab4 0%, #fd1d1d 50%, #fcb045 100%);
+}
+footer .footer__social .footer__link .footer__icon {
+  margin: 30px;
+}
+footer .titulo-final {
+  text-align: center;
+  font-size: 24px;
+  margin: 20px 0 0 0;
+  color: #14740f;
+}
+
+@keyframes key_valores {
+  0% {
+    content: " Honestidad";
+  }
+  9% {
+    content: " Fe";
+  }
+  18% {
+    content: " Paciencia";
+  }
+  27% {
+    content: " Respeto";
+  }
+  36% {
+    content: " Alegria";
+  }
+  45% {
+    content: " Amabilidad";
+  }
+  54% {
+    content: " Amor";
+  }
+  63% {
+    content: " Dominio Propio";
+  }
+  72% {
+    content: " Felicidad";
+  }
+  81% {
+    content: " Paz";
+  }
+  90% {
+    content: " Bondad";
+  }
+  100% {
+    content: " Tolerancia";
+  }
+}
+@keyframes key_valores_text {
+  0% {
+    content: " Los corazones honestos, producen acciones honestas.";
+  }
+  9% {
+    content: " Pero que pida con fe, sin dudar, porque quien duda es como las olas del mar agitadas y llevadas de un lado a otro por el viento. (Lucas 8:16)";
+  }
+  18% {
+    content: ' La paciencia no es simplemente la capacidad de esperar. es cómo nos comportamos mientras esperamos "Joyce Meyer"';
+  }
+  27% {
+    content: " El respeto por los otros es la primera condición para sobre vivir. Por eso ser brillante no es una gran hazaña si no existe el respeto";
+  }
+  36% {
+    content: ' Cuán bueno hace al hombre la dicha! parece que uno quisiera dar su corazón. su alegria. ¡Y la alegria es contagiosa! "Dostoievski"';
+  }
+  45% {
+    content: " Panal de miel son las palabras amables: endulzan la vida y dan salud al cuerpo. (Prove. 16:24)";
+  }
+  54% {
+    content: " El amor no es celoso. no busca sus propios intereses. no se siente provocado. no lleva cuenta del año. No se regocija por la injusticia. si no que se regocija con la verdad (Cor 13:4-8)";
+  }
+  63% {
+    content: ' La verdad libertad consiste en el dominio absoluto de si mismo. "Michael Eyquen"';
+  }
+  72% {
+    content: ' La felicidad generalmente no se logra con grandes golpes de suerte. que pueden ocurrir pocas veces. sino con pequeñas cosas que ocurren todos los dias. "Benjamin Franklin".';
+  }
+  81% {
+    content: " Mientras mas paz albergues en ti. mayor sera tu fortaleza. apártate del mal y haz el bien. busca la paz y siguela. (Salmo 34:14)";
+  }
+  90% {
+    content: ' Nadie puede hacer el bien en un espacio de su vida. mientras hace daño en otro. La vida es un todo invisible "Mahatma Gandhi"';
+  }
+  100% {
+    content: ' Puesto que yo soy imperfecto y necesito la tolerancia y la banda de los demás. tambien he de tolerar los defectos del mundo hasta que pueda encontrar el secreto que me permita ponerles remedio. "Mahatma Gandhi"';
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */

@@ -1,0 +1,62 @@
+.sobre-nosotros
+    background: $gris
+    > .contenedor
+        display: grid
+        grid-template-areas: "titulo titulo" "mision vision" "valores__corporativos valores__corporativos"
+        grid-gap: 10px
+        > .titulo
+            grid-area: titulo
+        .mision
+            grid-area: mision
+        .vision
+            grid-area: vision
+        .subtitulo
+            color: $verde
+            text-align: center
+        p
+            width: 95%
+            margin: auto
+            margin-top: 5%
+            text-align: justify
+            padding: 10px
+
+        .valores__corporativos
+            grid-area: valores__corporativos
+            display: grid
+            grid-template-areas: "titulo titulo" "imagen texto"
+            grid-template-columns: repeat(2, 1fr)
+            grid-gap: 10px
+            .subtitulo
+                grid-area: titulo
+                margin-bottom: 5%
+            .img
+                grid-area: imagen
+                display: flex
+                margin: auto
+                img
+                    width: 100%
+            .texto
+                grid-area: texto
+                display: flex
+                flex-direction: column
+                margin: auto
+                text-align: center
+                h4
+                    color: $verde
+                    text-align: center
+                    &::after
+                        content: ' Honestidad'
+                        animation: key_valores 80s alternate 5s infinite
+                p
+                    &::after
+                        content: ' Los corazones honestos, producen acciones honestas.'
+                        animation: key_valores_text 80s alternate 5s infinite
+
+@media screen and (max-width:414px)
+    .sobre-nosotros
+        > .contenedor
+            grid-template-areas: "titulo" "mision" "vision" "valores__corporativos"
+            .valores__corporativos
+                grid-template-areas: "titulo titulo" "imagen imagen" "texto texto"
+                .subtitulo
+                    text-align: center
