@@ -74,10 +74,8 @@ header .textos-header h1 {
   font-size: 50px;
   color: #FFF;
 }
-header .textos-header h2 {
+header .textos-header h1 span {
   font-size: 30px;
-  font-weight: 300;
-  color: #FFF;
 }
 header .wave {
   height: 150px;
@@ -344,11 +342,118 @@ header .wave {
 }
 .sobre-nosotros > .contenedor .valores__corporativos .texto h4::after {
   content: " Honestidad";
-  animation: key_valores 80s alternate 5s infinite;
+  animation: key_valores 180s alternate 15s infinite;
 }
 .sobre-nosotros > .contenedor .valores__corporativos .texto p::after {
   content: " Los corazones honestos, producen acciones honestas.";
-  animation: key_valores_text 80s alternate 5s infinite;
+  animation: key_valores_text 180s alternate 15s infinite;
+}
+
+.politicas > .contenedor {
+  display: grid;
+  grid-template-areas: "titulo titulo" "politica__calidad politica__seguridad";
+  grid-gap: 10px;
+}
+.politicas > .contenedor > .titulo {
+  grid-area: titulo;
+}
+.politicas > .contenedor .politica__calidad {
+  grid-area: politica__calidad;
+}
+.politicas > .contenedor .politica__seguridad {
+  grid-area: politica__seguridad;
+}
+.politicas > .contenedor .subtitulo {
+  text-align: center;
+  color: #14740f;
+}
+.politicas > .contenedor p {
+  width: 95%;
+  margin: auto;
+  margin-top: 5%;
+  text-align: justify;
+  padding: 10px;
+}
+
+.estados__financieros {
+  background: #F2F2F2;
+}
+.estados__financieros > .contenedor {
+  display: grid;
+  grid-template-areas: "titulo titulo titulo titulo" "card1 card2 card3 card4" ". estado__comparativo estado__comparativo .";
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 1fr 1fr;
+  gap: 20px;
+}
+.estados__financieros > .contenedor > .titulo {
+  grid-area: titulo;
+}
+.estados__financieros > .contenedor .estado__item {
+  background: #FFFFFF;
+  border: 1px solid #D3D3D3;
+  box-shadow: 1px 3px 5px 0px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 1px 3px 5px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 1px 3px 5px 0px rgba(0, 0, 0, 0.75);
+}
+.estados__financieros > .contenedor .estado__item a {
+  padding: 5px;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+}
+.estados__financieros > .contenedor .estado__item a img {
+  width: 50%;
+  margin: auto;
+}
+.estados__financieros > .contenedor .estado__item a span {
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  color: #14740f;
+}
+.estados__financieros > .contenedor .card1 {
+  grid-area: card1;
+}
+.estados__financieros > .contenedor .card2 {
+  grid-area: card2;
+}
+.estados__financieros > .contenedor .card3 {
+  grid-area: card3;
+}
+.estados__financieros > .contenedor .card4 {
+  grid-area: card4;
+}
+
+.proteccion_datos > .contenedor {
+  display: grid;
+  grid-template-areas: "titulo" "contenido";
+}
+.proteccion_datos > .contenedor .titulo {
+  grid-area: titulo;
+}
+.proteccion_datos > .contenedor .contenido {
+  display: grid;
+  grid-template-areas: "img content";
+  grid-template-columns: 1fr 4fr;
+  grid-area: contenido;
+  align-items: center;
+}
+.proteccion_datos > .contenedor .contenido img {
+  grid-area: img;
+  width: 100%;
+}
+.proteccion_datos > .contenedor .contenido .cont {
+  grid-area: content;
+}
+.proteccion_datos > .contenedor .contenido .cont p {
+  text-align: justify;
+  font-size: 20px;
+}
+.proteccion_datos > .contenedor .contenido .cont a {
+  text-decoration: underline;
+  color: #14740f;
+  font-size: 18px;
+  font-weight: bold;
 }
 
 @media screen and (max-width: 414px) {
@@ -360,6 +465,26 @@ header .wave {
   }
   .sobre-nosotros > .contenedor .valores__corporativos .subtitulo {
     text-align: center;
+  }
+
+  .politicas > .contenedor {
+    grid-template-areas: "titulo" "politica__calidad" "politica__seguridad";
+  }
+
+  .estados__financieros > .contenedor {
+    display: grid;
+    grid-template-areas: "titulo" "card1" "card2" "card3" "card4";
+    grid-template-columns: 1fr;
+    grid-template-rows: 50px repeat(4, 1fr);
+  }
+
+  .proteccion_datos > .contenedor .contenido {
+    grid-template-areas: "img" "content";
+    grid-template-columns: 1fr;
+  }
+  .proteccion_datos > .contenedor .contenido img {
+    width: 50%;
+    margin: auto;
   }
 }
 .que__hacemos {
@@ -603,7 +728,7 @@ footer::before {
   position: absolute;
   width: 100%;
   height: 100px;
-  background: #F2F2F2;
+  background: #FFFFFF;
   top: 0;
   left: 0;
   clip-path: polygon(0 0, 100% 0, 50% 100%);

@@ -46,11 +46,103 @@
                     text-align: center
                     &::after
                         content: ' Honestidad'
-                        animation: key_valores 80s alternate 5s infinite
+                        animation: key_valores 180s alternate 15s infinite
                 p
                     &::after
                         content: ' Los corazones honestos, producen acciones honestas.'
-                        animation: key_valores_text 80s alternate 5s infinite
+                        animation: key_valores_text 180s alternate 15s infinite
+
+.politicas
+    > .contenedor
+        display: grid
+        grid-template-areas: "titulo titulo" "politica__calidad politica__seguridad"
+        grid-gap: 10px
+        > .titulo
+            grid-area: titulo
+        .politica__calidad
+            grid-area: politica__calidad
+        .politica__seguridad
+            grid-area: politica__seguridad
+        .subtitulo
+            text-align: center
+            color: $verde
+        p
+            width: 95%
+            margin: auto
+            margin-top: 5%
+            text-align: justify
+            padding: 10px
+
+
+.estados__financieros
+    background: $gris
+    > .contenedor
+        display: grid
+        grid-template-areas: "titulo titulo titulo titulo" "card1 card2 card3 card4" ". estado__comparativo estado__comparativo ."
+        grid-template-columns: repeat(4,1fr)
+        grid-template-rows: 1fr 1fr
+        gap: 20px
+        > .titulo
+            grid-area: titulo
+        .estado__item
+            background: $blanco
+            border: 1px solid #D3D3D3
+            box-shadow: 1px 3px 5px 0px rgba(0,0,0,0.75)
+            -webkit-box-shadow: 1px 3px 5px 0px rgba(0,0,0,0.75)
+            -moz-box-shadow: 1px 3px 5px 0px rgba(0,0,0,0.75)
+            a
+                padding: 5px
+                text-decoration: none
+                display: flex
+                flex-direction: column
+                img
+                    width: 50%
+                    margin: auto
+                span
+                    font-size: 20px
+                    font-weight: bold
+                    text-align: center
+                    color: $verde
+        .card1
+            grid-area: card1
+        .card2
+            grid-area: card2
+        .card3
+            grid-area: card3
+        .card4
+            grid-area: card4
+
+
+.proteccion_datos
+    > .contenedor
+        display: grid
+        grid-template-areas: "titulo" "contenido"
+        .titulo
+            grid-area: titulo
+        .contenido
+            display: grid
+            grid-template-areas: "img content"
+            grid-template-columns: 1fr 4fr
+            grid-area: contenido
+            align-items: center
+            img
+                grid-area: img
+                width: 100%
+            .cont
+                grid-area: content
+                // h3
+                //     text-align: center
+                //     font-size: 22px
+                //     color: $verde
+                p
+                    text-align: justify
+                    font-size: 20px
+                a
+                    text-decoration: underline
+                    color: $verde
+                    font-size: 18px
+                    font-weight: bold
+
 
 @media screen and (max-width:414px)
     .sobre-nosotros
@@ -60,3 +152,21 @@
                 grid-template-areas: "titulo titulo" "imagen imagen" "texto texto"
                 .subtitulo
                     text-align: center
+    .politicas
+        > .contenedor
+            grid-template-areas: "titulo" "politica__calidad" "politica__seguridad"
+    .estados__financieros
+        > .contenedor
+            display: grid
+            grid-template-areas: "titulo" "card1" "card2" "card3" "card4"
+            grid-template-columns: 1fr
+            grid-template-rows: 50px repeat(4, 1fr)
+
+    .proteccion_datos
+        > .contenedor
+            .contenido
+                grid-template-areas: "img" "content"
+                grid-template-columns: 1fr
+                img
+                    width: 50%
+                    margin: auto
